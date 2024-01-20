@@ -150,3 +150,19 @@ Create secrets
 # create secret
 kubectl create secret generic <Secret Name> -n <Namespace Name> --from-file=./kube-config.yaml
 ```
+
+Print Logs
+```
+# print the logs for the last 6 hours
+kubectl logs --since=6h <pod_name>
+
+# follow the logs
+kubectl logs -f <pod_name>
+
+
+# print the logs for a container in a pod
+kubectl logs -c <container_name> <pod_name>
+
+# print the logs for a previously failed pod
+kubectl logs --previous <pod_name>
+```
